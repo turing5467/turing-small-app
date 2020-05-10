@@ -24,10 +24,10 @@
 
 下面是一些截图
 
-![image-20200510203337837](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200510203337837.png)
+ ![](https://ftp.bmp.ovh/imgs/2020/05/eb60e7dfe755d2bc.png) 
 
-![image-20200510203438211](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200510203438211.png)
+ ![](https://ftp.bmp.ovh/imgs/2020/05/3e38528cdb6b695c.png) 
 
-![image-20200510203711926](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200510203711926.png)
+ ![](https://ftp.bmp.ovh/imgs/2020/05/ae4b82738c80f6c2.png) 
 
-![image-20200510210340680](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200510210340680.png)
+ ![](https://ftp.bmp.ovh/imgs/2020/05/718363bfdf060eb9.png) 

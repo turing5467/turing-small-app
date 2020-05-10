@@ -10,10 +10,10 @@
       <view class="desc">{{rune.desc}}</view>
     </view>
   </view>
-  <view class="{{cur_text}}" wx:for="{{text}}" wx:for-item="cur_text">
+  <view class="{{cur_item}}" wx:for="{{text}}" wx:for-item="cur_item" wx:for-index="cur_index">
     <view>
-      <image mode="aspectFit" src="{{item.icon}}" class="icon" 
-        wx:for="{{rune[cur_text]}}"  bindtap="show_desc_box" data-obj="{{item}}"></image>
+      <image mode="aspectFit" src="{{item.icon}}" class="icon {{cur_text===cur_item && text_index===index?'active':''}}" 
+        wx:for="{{rune[cur_item]}}"  bindtap="show_desc_box" data-obj="{{item}}" data-index="{{index}}" data-text="{{cur_item}}"></image>
     </view>
   </view>
 

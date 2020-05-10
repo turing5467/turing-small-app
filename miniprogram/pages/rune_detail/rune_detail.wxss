@@ -45,6 +45,13 @@
   height: 60px;
   margin: 5px;
 }
+.icon {
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.icon.active {
+  border: 1px solid #fff;
+}
 
 .desc-box {
   color: #f0f0f0;

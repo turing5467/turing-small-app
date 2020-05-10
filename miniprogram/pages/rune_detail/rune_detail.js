@@ -7,7 +7,9 @@ Page({
   data: {
     rune: {},
     cur_rune: {},
-    text: ['jishi','rune_1','rune_2','rune_3']
+    text: ['jishi','rune_1','rune_2','rune_3'],
+    cur_text: '',
+    text_index: 0,
   },
 
   /**
@@ -32,8 +34,8 @@ Page({
 
   show_desc_box(e) {
     let obj = e.currentTarget.dataset.obj;
-    console.log(obj)
-    this.setData({cur_rune: obj})
+    let {text: cur_text, index: text_index} = e.currentTarget.dataset;
+    this.setData({cur_rune: obj, cur_text, text_index})
   },
 
   /**
