@@ -1,0 +1,24 @@
+<!--pages/rune_detail/rune_detail.wxml-->
+<view class="rune-box">
+  <view class="main">
+    <view class="left">
+      <image mode="aspectFit" class="icon" src="{{rune.icon}}"></image>
+      <image mode="aspectFit" class="border" src="{{rune.border}}"></image>
+    </view>
+    <view class="right">
+      <view class="name">{{rune.name}}</view>
+      <view class="desc">{{rune.desc}}</view>
+    </view>
+  </view>
+  <view class="{{cur_text}}" wx:for="{{text}}" wx:for-item="cur_text">
+    <view>
+      <image mode="aspectFit" src="{{item.icon}}" class="icon" 
+        wx:for="{{rune[cur_text]}}"  bindtap="show_desc_box" data-obj="{{item}}"></image>
+    </view>
+  </view>
+
+  <view class="desc-box">
+    <view class="name">{{cur_rune.name}}</view>
+    <view class="desc">{{cur_rune.desc}}</view>
+  </view>
+</view>

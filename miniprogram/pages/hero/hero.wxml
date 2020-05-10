@@ -1,0 +1,27 @@
+<!--pages/hero/hero.wxml-->
+<view>
+  <!-- <text>英雄信息</text> -->
+  <view class="search">
+    <icon class="search-icon" type="search" size="20" color="darkgray"></icon>
+    <input class="search-input" placeholder="搜索" bindconfirm="search"></input>
+  </view>
+
+  <view class="roles" wx:if="{{showCheckBox}}">
+    <checkbox-group bindchange="roleChange">
+    <label class="checkbox" wx:for="{{roles}}">
+        <checkbox value="{{item[0]}}" checked="{{false}}"/>{{item[1]}}
+    </label>
+    </checkbox-group>
+  </view>
+
+  <view class="list">
+    <view class="list-box">
+      <view style="height: {{item_height}}" class="hero" bindtap="switchPage" data-id="{{item.heroId}}" wx:for="{{heroList}}">
+      <image class="hero-image"  src="//game.gtimg.cn/images/lol/act/img/champion/{{item.alias}}.png" style="height: {{height}}"></image>
+      <text class="name">{{item.name}}</text>
+      <text class="title">{{item.title}}</text>
+    </view>
+    </view>
+    
+  </view>
+</view>

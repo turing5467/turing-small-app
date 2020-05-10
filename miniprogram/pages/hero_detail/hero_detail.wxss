@@ -1,0 +1,170 @@
+/* pages/hero_detail/hero_detail.wxss */
+.generalInfo {
+  text-align: left;
+  width: 100%;
+  height: 30%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.generalInfo .main {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 5px;
+  color: white;
+  z-index: 2;
+  box-sizing: border-box;
+}
+.generalInfo .title {
+  color: #fff;
+  font-size: 16px;
+}
+.generalInfo .role-list {
+  height: 21px;
+  margin-bottom: 5px;
+}
+.generalInfo .role {
+  float: left;
+  font-size: 12px;
+  width: 35px;
+  height: 21px;
+  line-height: 21px;
+  margin-right: 5px;
+  text-align: center;
+  background: #00a483;
+  border-radius: 5px;
+}
+.generalInfo .attr {
+  width: 180px;
+}
+.generalInfo .attrTitle {
+    float: left;
+    width: 30%;
+    margin-bottom: 5px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+.generalInfo .attrBG {
+  float: left;
+    width: 60%;
+    margin: 2px 0 7px;
+    height: 12px;
+    background: #363c3c;
+}
+.generalInfo .up1 {
+    background: #f2c500;
+}
+.generalInfo .up2 {
+    background: #f59d00;
+}
+.generalInfo .up3 {
+    background: #2c97de;
+}
+.generalInfo .up4 {
+    background: #1eca6b;
+}
+
+.generalInfo .up {
+    display: block;
+    height: 12px;
+}
+
+.sbg {
+  position: absolute;
+  top: 0;
+    left: 0;
+    width: 170px;
+    height: 30%;
+    z-index: 1;
+    background: #000000;
+    opacity: .2;
+}
+.bgStory {
+  margin-top: 5px;
+}
+.title {
+  height: 24px;
+  text-align: left;
+  font-size: 18px;
+    color: #338c7a;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.title text {
+  position: absolute;
+left: 5px;
+
+}
+.bgStory .shortBio {
+  padding: 8px 12px;
+    font-size: 12px;
+    line-height: 16px;
+    text-indent: 2em;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+    background: #fff;
+    margin: 1px;
+}
+.spells .img-list {
+  margin-bottom: 3px;
+  height: 60px;
+  padding-left: 10px;
+}
+
+.spells .spell {
+  width: 54px;
+  height: 54px;
+  display: inline-block;
+  border: 2px solid #0f0f0f;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+.spells .spell image {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+}
+.spells .active{
+  border: 2px solid #00a483;
+}
+.spells .name {
+  padding-right: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+.spells .key {
+  font-size: 14px;
+    color: #999;
+}
+.spells .desc {
+  margin-top: 5px;
+  font-size: 14px;
+  display: block;
+}
+.spells .detail {
+  padding: 10px;
+  background-color: #fff;
+      border: 1px solid #e1e1e1;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+}
+.skill-box {
+  padding: 10px 15px 5px;
+      border: 1px solid #e1e1e1;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+    background: #fff;
+}
+.skill-title {
+  font-size: 14px;
+    font-weight: 700;
+    color: #338c7a;
+    padding-bottom: 8px;
+}
+.skill-text {
+  padding-bottom: 10px;
+  font-size: 14px;
+  line-height: 24px;
+}

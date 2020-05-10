@@ -1,0 +1,64 @@
+/* pages/rune_detail/rune_detail.wxss */
+.rune-box {
+  background-color: #000;
+  height: 100%;
+}
+.icon {
+  width: 70px;
+  height: 70px;
+}
+.main {
+  height: 100px;
+  position: relative
+}
+.main .icon {
+  width: 100px;
+  height: 100px;
+}
+.main .border {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main .left, .main .right {
+  float: left;
+  height: 100%;
+  box-sizing: border-box;
+}
+.main .right {
+  color: rgb(226, 223, 223);
+  padding-top: 20px;
+
+}
+.right .name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.right .desc {
+  font-size: 14px;
+  color: #a6a5a5
+}
+.rune_1 .icon, .rune_2 .icon, .rune_3 .icon {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+}
+
+.desc-box {
+  color: #f0f0f0;
+  padding: 5px;
+}
+
+.desc-box .name {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.desc-box .desc {
+  font-size: 14px;
+  color: #a6a5a5;
+  line-height: 16px;
+}

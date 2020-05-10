@@ -1,0 +1,82 @@
+<!--pages/hero_detail/hero_detail.wxml-->
+<view class="main">
+  <view class="generalInfo" style="background-image: url(https://game.gtimg.cn/images/lol/act/img/skin/big{{hero.heroId}}000.jpg)">
+    <view class="main">
+      <view class="title">{{hero.title}}</view>
+      <view class="role-list">
+        <text class="role" wx:for="{{roles}}">{{item}}</text>
+      </view>
+      <view class="attr">
+        <text class="attrTitle">物理攻击</text>
+        <view class="attrBG">
+          <view class="up up1" style="width:{{hero.attack*10}}%"></view>
+        </view>
+      </view>
+      <view class="attr">
+        <text class="attrTitle">魔法攻击</text>
+        <view class="attrBG">
+          <view class="up up2" style="width:{{hero.magic*10}}%"></view>
+        </view>
+      </view>
+      <view class="attr">
+        <text class="attrTitle">防御能力</text>
+        <view class="attrBG">
+          <view class="up up3" style="width:{{hero.defense*10}}%"></view>
+        </view>
+      </view>
+      <view class="attr">
+        <text class="attrTitle">上手难度</text>
+        <view class="attrBG">
+          <view class="up up4" style="width:{{hero.difficulty*10}}%"></view>
+        </view>
+      </view>
+    </view>
+    <view class="sbg"></view>
+  </view>
+
+  <view class="bgStory">
+    <view class="title">
+      <text>背景故事</text>
+    </view>
+    <view class="shortBio">{{hero.shortBio}}</view>
+  </view>
+
+  <view class="spells">
+    <view class="title">
+      <text>技能介绍</text>
+    </view>
+    <view class="img-list">
+      <view wx:for="{{spells}}" class="spell {{index==curindex?'active':''}}">
+        <image bindtap="switchSpell" data-curindex="{{index}}" mode="aspectFit" src="{{item.abilityIconPath}}"></image>
+      </view>
+    </view>
+    <view class="detail">
+        <view>
+          <text class="name">{{spells[curindex].name}}</text>
+          <text class="key">{{spells[curindex].spellKey==='passive'?'被动技能':'快捷键：'+spells[curindex].spellKey}}</text>
+        </view>
+        <text class="desc">{{spells[curindex].description}}</text>
+      </view>
+  </view>
+
+  <view class="skill">
+  <view class="title">
+      <text>使用技巧</text>
+    </view>
+    <view class="skill-box">
+      <view>
+      <text class="skill-title">当你使用{{hero.name}}</text>
+      <view class="skill-text">
+        <text wx:for="{{hero.allytips}}">{{item}}</text>
+      </view>
+    </view>
+    <view>
+      <text class="skill-title">敌人使用{{hero.name}}</text>
+      <view class="skill-text">
+        <text wx:for="{{hero.enemytips}}">{{item}}</text>
+      </view>
+    </view>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/hero/hero",
+    "pages/item/item",
+    "pages/index/index",
+    "pages/hero_detail/hero_detail",
+    "pages/rune_detail/rune_detail"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "小图灵的基地",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#258abf",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/index.png",
+        "selectedIconPath": "images/icon/index_active.png"
+      },
+      {
+        "pagePath": "pages/hero/hero",
+        "text": "英雄",
+        "iconPath": "images/icon/hero.png",
+        "selectedIconPath": "images/icon/hero_active.png"
+      },
+      {
+        "pagePath": "pages/item/item",
+        "text": "铭文",
+        "iconPath": "images/icon/item.png",
+        "selectedIconPath": "images/icon/item_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "cloud": true
+}

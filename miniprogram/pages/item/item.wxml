@@ -1,0 +1,11 @@
+<!--pages/item/item.wxml-->
+
+<view class="rune">
+  <view class="rune-item" bindtap="switchRune" data-index="{{index}}" wx:for="{{rune}}">
+    <image class="icon" src="{{item.icon}}"></image>
+    <image class="border" src="{{item.border}}"></image>
+    <view class="name">{{item.name}}</view>
+    <view class="desc">{{item.desc}}</view>
+  </view>
+
+</view>
