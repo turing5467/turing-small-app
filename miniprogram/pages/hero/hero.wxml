@@ -17,7 +17,7 @@
   <view class="list">
     <view class="list-box">
       <view style="height: {{item_height}}" class="hero" bindtap="switchPage" data-id="{{item.heroId}}" wx:for="{{heroList}}">
-      <image class="hero-image"  src="//game.gtimg.cn/images/lol/act/img/champion/{{item.alias}}.png" style="height: {{height}}"></image>
+      <image class="hero-image" data-index="{{index}}" src="{{item.show?'//game.gtimg.cn/images/lol/act/img/champion/'+item.alias+'.png':'https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif'}}" style="height: {{height}}"></image>
       <text class="name">{{item.name}}</text>
       <text class="title">{{item.title}}</text>
     </view>

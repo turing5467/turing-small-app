@@ -1,4 +1,5 @@
 // pages/hero/hero.js
+const app = getApp();
 Page({
 
   /**
@@ -16,25 +17,37 @@ Page({
       ['marksman','射手'],
       ['support','辅助']
     ],
-    showCheckBox: true
+    showCheckBox: true,
+    screenHeight: '',
   },
 
+  _observer: null,
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
     const this_ = this;
 
+
+    //获取英雄列表
     wx.cloud.callFunction({
       name: 'getHeroList',
       success: (res) => {
-        this_.setData({heroList: res.result});
+        let heroList = (res.result).map(ele => {
+          //图片show属性初始化
+          return {...ele, show: false}
+        })
+        this_.setData({heroList}, this.lazyload);
+        
       }, 
       fail: (err) => {
         console.error
       }
     })
+    
 
+    //设置图片高度，即item高度
     var query = wx.createSelectorQuery();
     // let this_ = this;
     query.select('.search-input').boundingClientRect((rect) => {
@@ -45,12 +58,41 @@ Page({
     }).exec();
   },
 
+  lazyload() {
+    const this_ = this;
+    let heroList = this.data.heroList;
+
+    this_._observer && this_._observer.disconnect()
+
+    let observer = wx.createIntersectionObserver(this, {
+      // 阈值设置少，避免触发过于频繁导致性能问题
+      thresholds: [1],
+      // 监听多个对象
+      observeAll: true
+    });
+    observer.relativeToViewport({
+      bottom: 100
+    }).observe('.hero-image', (ret) => {
+      if (ret.intersectionRatio > 0) {
+        let index = ret.dataset.index
+        heroList[index].show = true;
+        this_.setData({ heroList });
+      }
+    })
+
+    this_._observer = observer;
+  
+  },
+
+  //跳转至英雄详情页
   switchPage(e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../hero_detail/hero_detail?id='+id,
     })
   },
+
+  //搜索
   search(e) {
     let this_ = this
     let searchWord = e.detail.value;
@@ -60,7 +102,10 @@ Page({
         searchWord
       },
       success(res) {
-        this_.setData({heroList: res.result})
+        let heroList = (res.result).map(ele => {
+          return {...ele, show:true}
+        })
+        this_.setData({heroList})
       }
     })
     if (searchWord === '') {
@@ -70,6 +115,7 @@ Page({
     }
   },
 
+  //选择英雄角色
   roleChange(e) {
     let roles = e.detail.value;
     let this_ = this;
@@ -79,10 +125,15 @@ Page({
         roles
       },
       success(res) {
-        this_.setData({heroList: res.result});
+        let heroList = (res.result).map(ele => {
+          return { ...ele, show: false }
+        })
+        
+        this_.setData({ heroList }, this_.lazyload);
       }
     })
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -90,7 +141,6 @@ Page({
   onReady: function () {
     
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

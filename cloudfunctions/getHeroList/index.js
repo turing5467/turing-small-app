@@ -10,7 +10,7 @@ const MAX_LIMIT = 100;
 exports.main = async (event, context) => {
   let searchWord = event.searchWord;
   let roles = event.roles;
-  if(searchWord) {
+  if(searchWord && searchWord !== '') {
     let res = await db.collection('hero').where(_.or([
       {
         name: db.RegExp({
@@ -32,7 +32,7 @@ exports.main = async (event, context) => {
       }
     ])).get();
     return res.data;
-  }else if(roles){
+  }else if(roles && roles.length > 0){
     let res = null;
     res = await db.collection('hero').where(_.and(roles.map(ele => {
       return {
